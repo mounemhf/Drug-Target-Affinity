@@ -11,44 +11,27 @@ Packages listed in requirements.txt
 
 Internet connection (for online fetch)
 
-Install dependencies (inside project folder):
+⚙️ How to use
 
-python -m venv .venv
-.\.venv\Scripts\activate   # Windows
-pip install --upgrade pip
+1️⃣ Install dependencies with:
+
 pip install -r requirements.txt
 
-▶️ Usage
-1. Run with a drug name
+
+2️⃣ Run with a drug name:
+
 python binding_fetch_online.py --drug-name Cabazitaxel --protein example_inputs/cancer_targets/tubb.fasta --outdir results --pubchem-keep-all
 
-2. Run with a SMILES string (preferred for accuracy)
+
+3️⃣ Or with a SMILES string (preferred for novel molecules):
+
 python binding_fetch_online.py --smiles "CC[C@H]1C(=O)O..." --protein example_inputs/cancer_targets/egfr.fasta --outdir results
 
-3. Run one drug against all targets in a folder
-python run_one_drug_all_targets.py --drug-name Gefitinib --targets-dir example_inputs/cancer_targets --outroot results
 
-4. Batch mode (CSV list of drugs and proteins)
-run_batch_list.bat batch_list.csv
+4️⃣ Results are saved under results/:
 
-📂 Output
+report_online.md → global summary
 
-Results are saved under the results/ folder:
+report_chembl.md, report_pubchem.md, report_iuphar.md, report_bindingdb.md
 
-report_online.md → Global summary & interpretation
-
-report_chembl.md → ChEMBL-specific
-
-report_pubchem.md → PubChem-specific
-
-report_iuphar.md → IUPHAR-specific
-
-report_bindingdb.md → BindingDB-specific
-
-summary.json + CSV files with raw records
-
-⚠️ Notes
-
-If no records are found, it means there are no curated assays for that drug–target pair.
-
-The tool aggregates experimental data only. For novel molecules without assays, you will need predictive models (e.g., DeepDTA).
+⚠️ Note: this tool aggregates existing experimental data. For completely new molecules with no assays, the next step is to integrate deep learning predictors (e.g., DeepDTA, GraphDTA) for computational forecasts before lab validation.
