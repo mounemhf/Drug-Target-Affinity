@@ -1,0 +1,11 @@
+drug_name,smiles,fasta_path,outdir
+Gefitinib,,example_inputs/cancer_targets/egfr.fasta,results/egfr_gefitinib
+Lapatinib,,example_inputs/cancer_targets/erb2_her2.fasta,
+Crizotinib,,example_inputs/cancer_targets/alk.fasta,
+Vemurafenib,,example_inputs/cancer_targets/braf.fasta,
+Ivosidenib,,example_inputs/cancer_targets/idh1.fasta,
+Selpercatinib,,example_inputs/cancer_targets/ret.fasta,
+Entrectinib,,example_inputs/cancer_targets/ros1.fasta,
+Cabazitaxel,,example_inputs/cancer_targets/tubb.fasta,
+Olaparib,,example_inputs/cancer_targets/parp1.fasta,
+BMS-202,,example_inputs/cancer_targets/cd274_pdl1.fasta,
